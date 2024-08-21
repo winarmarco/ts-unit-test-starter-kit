@@ -105,3 +105,10 @@ export function clearCart(): Record<string, number> {
 //   // Activity 1 code here
 //   return 0;
 // }
+export function applyShippingDiscount(total: number): number {
+  const DISCOUNT_THRESHOLD = 500;
+  const DISCOUNT_DOLLAR = 10;
+
+  const discountAmount = total > DISCOUNT_THRESHOLD ? DISCOUNT_DOLLAR : 0;
+  return total - discountAmount;
+}
